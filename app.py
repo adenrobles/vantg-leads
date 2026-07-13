@@ -5,7 +5,9 @@ import csv
 import io
 from flask import Flask, render_template, jsonify, request, g, Response
 
-app = Flask(__name__)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+  app = Flask(__name__, template_folder=os.path.join(BASE_DIR,
+  'templates'))
 DATABASE = os.path.join(os.path.dirname(__file__), 'leads.db')
 
 

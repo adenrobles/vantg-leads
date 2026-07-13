@@ -3,7 +3,12 @@ import sqlite3
 import json
 import csv
 import io
-from flask import Flask, render_template, jsonify, request, g, Response
+from flask import Flask, send_from_directory, jsonify, request, g,
+  Response
+  and
+  @app.route('/')
+  def index():
+      return send_from_directory(BASE_DIR, 'index.html')
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
   app = Flask(__name__, template_folder=os.path.join(BASE_DIR,

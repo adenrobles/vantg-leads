@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS leads (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    business_name TEXT NOT NULL,
+    business_type TEXT,
+    phone TEXT,
+    website TEXT,
+    instagram TEXT,
+    address TEXT,
+    city TEXT,
+    state TEXT DEFAULT 'CA',
+    rating REAL,
+    review_count INTEGER,
+    priority INTEGER DEFAULT 3,
+    priority_reason TEXT,
+    ad_status TEXT DEFAULT 'unknown',
+    contacted INTEGER DEFAULT 0,
+    contacted_date TEXT,
+    notes TEXT,
+    dm_generated TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(business_name, city)
+);
